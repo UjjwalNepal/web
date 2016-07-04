@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/ujjwal/csrdc-master/conf/routes,/home/ujjwal/csrdc-master/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/ujjwal/csrdc-master/conf/logback.xml,/home/ujjwal/csrdc-master/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/ujjwal/csrdc-master/conf/application.conf,/home/ujjwal/csrdc-master/target/scala-2.11/classes/application.conf)[0m

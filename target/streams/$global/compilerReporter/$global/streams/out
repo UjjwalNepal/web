@@ -1,0 +1,10 @@
+[0m[[33mwarn[0m] [0m/home/ujjwal/csrdc-master/app/controllers/Application.scala:28: method current in object Play is deprecated: This is a static reference to application, use DI instead[0m
+[0m[[33mwarn[0m] [0m    Ok(views.html.index(loginForm))[0m
+[0m[[33mwarn[0m] [0m                       ^[0m
+[0m[[33mwarn[0m] [0m/home/ujjwal/csrdc-master/app/controllers/Application.scala:64: method current in object Play is deprecated: This is a static reference to application, use DI instead[0m
+[0m[[33mwarn[0m] [0m      formWithErrors => BadRequest(views.html.index(formWithErrors)),[0m
+[0m[[33mwarn[0m] [0m                                                   ^[0m
+[0m[[33mwarn[0m] [0m/home/ujjwal/csrdc-master/app/controllers/Application.scala:67: method current in object Play is deprecated: This is a static reference to application, use DI instead[0m
+[0m[[33mwarn[0m] [0m        Ok(views.html.index(loginForm)).flashing("success" -> "Message recorded !")[0m
+[0m[[33mwarn[0m] [0m                           ^[0m
+[0m[[33mwarn[0m] [0mthree warnings found[0m

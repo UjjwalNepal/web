@@ -1,0 +1,154 @@
+@(loginForm : Form[Contact])(implicit messages : Messages)
+@import helper._
+@import views.html.bootstrap3._
+
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>Computer Science Research and Development Center Nepal.</title>
+        <meta name="description" content="CSRDC Nepal">
+        <meta name="viewport" content="width=device-width">
+
+
+
+
+    </head>
+    <body>
+            <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+        @imports()
+        @header()
+
+        <script>
+                var myCenter=new google.maps.LatLng(27.6844899,85.3353435);
+                function initialize(){
+                    var mapProp = {
+                        center:myCenter,
+                        zoom:18,
+                        mapTypeId:google.maps.MapTypeId.ROADMAP
+                    };
+
+                    var map=new google.maps.Map(document.getElementById("map"),mapProp);
+
+                    var marker=new google.maps.Marker({
+                        position:myCenter,
+                        animation:google.maps.Animation.BOUNCE
+                    });
+
+                    marker.setMap(map);
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+
+
+
+        <div class="site-slider">
+            <ul class="bxslider">
+                <li>
+                    <img src="images/slider/slide1.jpg" alt="slider image 1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <div class="slider-caption">
+                                    <h2>Your HTML5 Website</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul> <!-- /.bxslider -->
+            <div class="bx-thumbnail-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="bx-pager">
+                                <a data-slide-index="0" href=""><img src="assets/images/slider/thumb1.jpg" alt="image 1" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.site-slider -->
+
+        @services()
+
+        @career()
+
+        @about()
+
+        <div id="contact" class="content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="section-title">Contact Us</h1>
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8 text-center bigger-text">
+                        <p>Computer Science Research and Development Center is located at Sankhamool - 34, Kathmandu, Nepal. </p>
+                        <br>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div id="map">
+                            <span class="glyphicon glyphicon-map-marker"></span> Sankhamool, Kathmandu &nbsp;&nbsp;
+                        </div>
+                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-6">
+                    
+                    @form(action=routes.Application.handleForm()){ 
+                        
+                    <fieldset>
+                       <!-- Name -->
+                      @text(loginForm("name"),
+                            label = "Name",
+                            placeholder = "Name",
+                            help = "Please enter your name. (required)")
+                    
+                      <!-- Email -->
+                      @text(loginForm("email"),
+                                label = "Email",
+                                placeholder = "Email",
+                                help = "Enter a valid email address. (required)")
+                    
+                       <!-- Subject -->
+                      @text(loginForm("subject"),
+                                  label = "Subject",
+                                  placeholder = "Subject",
+                                  help = "Enter the subject. (required)")
+                    
+                      <!-- Message -->
+                      @text(loginForm("message"),
+                                    label = "Message",
+                                    placeholder = "Message",
+                                    help = "Enter the message. (required)")
+                    
+                      
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button id="submit" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    }
+
+                        
+
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /#contact us -->
+
+        @footer()
+
+    </body>
+</html>
